@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
 from PIL import Image
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Header
 st.header("Painel de Monitoramento de Resistência a Bactérias")
@@ -18,3 +20,6 @@ with cent_col:
 # Texto introdutório
 
 st.markdown("Dados da microbiologia do HIAE.")
+
+
+
