@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ds_unidade_coleta;ds_predio_coleta;dh_coleta_exame;ds_micro_organismo;ds_antibiotico_microorganismo;ds_mic_microorganismo;cd_interpretacao_antibiograma
 HIAE Morumbi;Bloco A;2023-08;Achromobacter xylosoxidans;Amicacina;256;Resistente
 HIAE Morumbi;Bloco A;2023-08;Achromobacter xylosoxidans;Amicacina;256;Resistente
@@ -5390,7 +5389,7 @@ HIAE Morumbi;Bloco D;2019-05;Streptococcus pneumoniae;Penicilina - Oral;0.008;Se
 HIAE Morumbi;Bloco D;2019-05;Streptococcus pneumoniae;Penicilina - Outros Materiais;0.008;Sensivel
 HIAE Morumbi;Bloco A;2021-11;Streptococcus pneumoniae;Penicilina;;Sensivel
 HIAE Morumbi;Bloco B;2019-05;Streptococcus pneumoniae;Eritromicina;;Resistente
-=======
+=======;;;;;;
 ds_unidade_coleta;ds_predio_coleta;dh_coleta_exame;ds_micro_organismo;ds_antibiotico_microorganismo;ds_mic_microorganismo;cd_interpretacao_antibiograma
 HIAE Morumbi;Bloco A;2023-08;Achromobacter xylosoxidans;Amicacina;256;Resistente
 HIAE Morumbi;Bloco A;2023-08;Achromobacter xylosoxidans;Amicacina;256;Resistente
@@ -10782,4 +10781,4 @@ HIAE Morumbi;Bloco D;2019-05;Streptococcus pneumoniae;Penicilina - Oral;0.008;Se
 HIAE Morumbi;Bloco D;2019-05;Streptococcus pneumoniae;Penicilina - Outros Materiais;0.008;Sensivel
 HIAE Morumbi;Bloco A;2021-11;Streptococcus pneumoniae;Penicilina;;Sensivel
 HIAE Morumbi;Bloco B;2019-05;Streptococcus pneumoniae;Eritromicina;;Resistente
->>>>>>> 6a3839100a99a7a6d8f1fc2f1192d0f3f72dfcee
+>>>>>>> 6a3839100a99a7a6d8f1fc2f1192d0f3f72dfcee;;;;;;
