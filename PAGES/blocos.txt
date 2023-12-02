@@ -1,0 +1,104 @@
+
+Dados da unidade:HIAE Morumbi
+Bloco A
+Bloco D
+Morumbi
+Bloco B2
+Bloco B
+Bloco A1
+nan
+Bloco Externo
+Unid Intern Bloco E
+
+Dados da unidade:Ibirapuera
+Ibirapuera
+
+Dados da unidade:Santa Catarina
+Santa Catarina
+BlocoF
+BlocoC
+BlocoB
+
+Dados da unidade:Orion
+ORIO - Hospital Orion
+
+Dados da unidade:HMAP - H Munic. de Aparecida de Goiana
+HMAP - H Munic. de Aparecida de Goiania
+
+Dados da unidade:L220 Prevent Senior Private Operadora de
+L220 Prevent Senior Private Operadora de
+
+Dados da unidade:L901 - LaboratorioMBoi
+L901 - LaboratorioMBoi
+
+Dados da unidade:L212 - Fonte IMD
+L212 - Fonte IMD
+
+Dados da unidade:CRISTAO SORO
+HOCS - HOSPITAL CRISTAO DE SOROCABA
+
+Dados da unidade:MADRE THEODORA
+HOSPITAL MADRE THEODORA CAMPINAS
+
+Dados da unidade:Perdizes
+Perdizes
+
+Dados da unidade:Chacara Klabin
+Chacara Klabin
+
+Dados da unidade:Hosp Vitoria
+HVRJ - Hospital Vitoria AMC
+
+Dados da unidade:Vila Mariana
+Residencial
+
+Dados da unidade:Parque Cidade
+Parque da Cidade
+
+Dados da unidade:Alphaville
+Alphaville
+
+Dados da unidade:L900 -LaboratorioMogi
+L900 -LaboratorioMogi
+
+Dados da unidade:Ens Prof
+L267 Ensino de Proficiencia
+
+Dados da unidade:Samaritano RJ
+LaboratorioHospital Samaritano Botafogo
+
+Dados da unidade:Jardins
+Jardins
+
+Dados da unidade:L672 Prevent SR
+L672 Prevent SR
+
+Dados da unidade:T Expansao HIAE
+L262 Teste Expansao HIAE
+
+Dados da unidade:Samarit Barra
+HSBT - Hospital Samaritano Barra AMC
+
+Dados da unidade:HIAE
+HIAE
+
+Dados da unidade:Benef Siria
+Siria(HCOR)
+
+Dados da unidade:Santa Maria HS
+HSMLOC Hospital Santa Maria de Suzano S.
+
+Dados da unidade:Santa Maria HSM
+HSMEXT Hospital Santa Maria de Suzano S.
+
+Dados da unidade:Senne liquor
+Senne liquor
+
+Dados da unidade:Alto de Pinheiros
+Alto de Pinheiros
+
+Dados da unidade:AMB SANTANA
+Santana
+
+Dados da unidade:Neurolife
+L915 Neurolife Laboratorios LTDA

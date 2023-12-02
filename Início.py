@@ -1,25 +1,24 @@
-import pandas as pd
 import streamlit as st
 from PIL import Image
-import matplotlib.pyplot as plt
-import seaborn as sns
 
-# Header
-st.header("Painel de Monitoramento de Resistência a Bactérias")
 
-# carregando imagem para o logo
-img = Image.open("antibióticos.jpeg")
+# Título e subtítulo
+st.title("Dashboard de Microbiologia")
+st.subheader("Explorando Dados Microbiológicos de Forma Interativa")
+img = Image.open("ft.jpg")
 
-# dividindo o espaçamento da tela em colunas
 left_col, cent_col, last_col = st.columns(3)
+with left_col:
+    st.image(img, width=700
+             )
 
-# colocando o logo na coluna central
-with cent_col:
-    st.image(img, width=350)
+st.write(
+    "Bem-vindo ao nosso dashboard de microbiologia! Aqui você poderá explorar e analisar dados microbiológicos de forma interativa."
+)
 
-# Texto introdutório
+# Adicionar mais elementos visuais ou informativos conforme necessário
 
-st.markdown("Dados da microbiologia do HIAE.")
-
-
+# Rodapé
+st.markdown("---")
+st.write("Desenvolvido por GRUPO 06 - T1 - Engenharia Biomédica FICSAE")
 
