@@ -36,7 +36,8 @@ df_filtrado_interpretacao = df_filtrado_data[df_filtrado_data['cd_interpretacao_
 df_contagem = df_filtrado_interpretacao.groupby(['ds_unidade_coleta', 'ds_antibiotico_microorganismo']).size().reset_index(name='Contagem')
 
 # Geração do Gráfico de Barras Empilhadas
-fig = px.bar(df_contagem, x='ds_unidade_coleta', y='Contagem', color='ds_antibiotico_microorganismo',
+fig = px.bar(df_contagem, x='ds_unidade_coleta', y=df_contagem['Contagem'], color='ds_antibiotico_microorganismo',
              title=f'Bactéria: {bacteria_selecionada} - {interpretacao_selecionada}',
-             labels={'ds_unidade_coleta': 'Unidade de Coleta', 'ds_antibiotico_microorganismo': 'Antibiótico'})
+             labels={'ds_unidade_coleta': 'Unidade de Coleta', 'ds_antibiotico_microorganismo': 'Antibiótico', 'Contagem': 'Quantidade'})
 st.plotly_chart(fig, use_container_width=True)
+

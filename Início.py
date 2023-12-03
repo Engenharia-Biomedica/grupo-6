@@ -1,7 +1,6 @@
 import streamlit as st
-from PIL import Image
-
-
+from PIL import Image   
+   
 # Título e subtítulo
 st.title("Dashboard de Microbiologia")
 st.subheader("Explorando Dados Microbiológicos de Forma Interativa")
@@ -15,10 +14,9 @@ with left_col:
 st.write(
     "Bem-vindo ao nosso dashboard de microbiologia! Aqui você poderá explorar e analisar dados microbiológicos de forma interativa."
 )
-
-# Adicionar mais elementos visuais ou informativos conforme necessário
-
 # Rodapé
 st.markdown("---")
 st.write("Desenvolvido por GRUPO 06 - T1 - Engenharia Biomédica FICSAE")
+
+
 

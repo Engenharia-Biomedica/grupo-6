@@ -1,8 +1,6 @@
 import pandas as pd
 import streamlit as st
-import plotly.express as px
-import plotly.graph_objects as go
-import numpy as np
+import altair as alt
 
 #leitura do csv
 file_path = "DG.csv"
@@ -43,61 +41,38 @@ for linha in linhas:
             dados_unidades[unidade_atual] = []
         else:
             dados_unidades[unidade_atual].append(linha)
-
-# Interface no Streamlit
-st.title("Dashboard - Guia de Hospital")
-unidade_selecionada = st.selectbox('Selecione a unidade hospitalar:', list(dados_unidades.keys()))
+#Interface dos gráficos:
+# Dropdown para selecionar a unidade
+unidade_selecionada = st.selectbox("Selecione a unidade:", dados['ds_unidade_coleta'].unique())
 
 # Filtra os dados pela unidade selecionada
-prédios_unidade = dados_unidades[unidade_selecionada]
+df_unidade = dados[dados['ds_unidade_coleta'] == unidade_selecionada]
 
-# Cria um DataFrame com as informações dos prédios
-df_prédios = pd.DataFrame({'Prédios': prédios_unidade})
+# Obtem os tipos de datas únicos
+tipos_datas = df_unidade['dh_coleta_exame'].unique()
 
-# Cria um gráfico de barras usando o Plotly Express
-fig = px.bar(df_prédios, x=[1] * len(df_prédios), y=[1] * len(df_prédios),
-             text='Prédios', width=800, height=400)
+# Dropdown para selecionar o tipo de data
+tipo_data_selecionado = st.selectbox("Selecione o tipo de data:", tipos_datas)
 
-# Personalizações do layout
-fig.update_traces(marker=dict(color='blue', line=dict(color='black', width=2)), selector=dict(type='bar'))
+# Filtra os dados pelo tipo de data selecionado
+df_data = df_unidade[df_unidade['dh_coleta_exame'] == tipo_data_selecionado]
 
-# Adiciona anotações de texto com a quantidade de bactérias em cada prédio
-for i, row in enumerate(df_prédios.iterrows()):
-    prédio_nome = row[1]['Prédios']
-    
-    # Filtra o DataFrame para o prédio específico
-    df_prédio = df[df['ds_predio_coleta'] == prédio_nome]
-    
-    # Verifica se há bactérias para o prédio
-    if not df_prédio.empty:
-        # Obtém a lista de tipos de bactérias para o prédio específico
-        tipos_bactérias = df_prédio['ds_micro_organismo'].tolist()
-        # Usa uma paleta de cores padrão do Plotly para atribuir cores diferentes aos tipos de bactérias
-        cores = px.colors.qualitative.Plotly[:len(tipos_bactérias)]
-        # Mapeia os tipos de bactérias para as cores correspondentes
-        cor_por_bactéria = dict(zip(tipos_bactérias, cores))
-        
-        # Cria uma lista de cores para cada bactéria no prédio
-        cores_prédio = [cor_por_bactéria.get(bactéria, "gray") for bactéria in tipos_bactérias]
-
-    else:
-        # Se não há dados, use uma cor padrão
-        cores_prédio = ["gray"]  # ou qualquer cor padrão
-    
-    fig.add_trace(go.Scatter(
-        x=[i + 1] * len(cores_prédio),
-        y=[1] * len(cores_prédio),
-        text=[f"Bactéria: {bactéria}" for bactéria in tipos_bactérias],
-        mode="markers+text",
-        marker=dict(color=cores_prédio, size=20, line=dict(color='black', width=2)),
-        textposition="bottom center",
-    ))
-
-fig.update_layout(
-    showlegend=False,
-    xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-    yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-    title=f"Guia de Hospital - Unidade: {unidade_selecionada}",
-)
-st.plotly_chart(fig)
-    
+# Convertendo a coluna 'dh_coleta_exame' para datetime
+df_data['dh_coleta_exame'] = pd.to_datetime(df_data['dh_coleta_exame'])
+st.title("Estudo da frequência de bactérias Unidade/Prédios")
+# Gráfico de barras usando Altair
+if not df_data.empty:
+    chart = (
+        alt.Chart(df_data)
+        .mark_bar()
+        .encode(
+            x=alt.X('ds_predio_coleta:N', title='Prédio de Coleta'),
+            y=alt.Y('count()', title='Quantidade'),
+            color='ds_micro_organismo:N',
+            tooltip=['ds_predio_coleta', 'count()', 'ds_micro_organismo']
+        )
+        .properties(width=600, height=400)
+    )
+    st.altair_chart(chart, use_container_width=True)
+else:
+    st.warning("Não há dados disponíveis para a unidade e tipo de data selecionados.")
