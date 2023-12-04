@@ -72,7 +72,22 @@ if not df_data.empty:
             tooltip=['ds_predio_coleta', 'count()', 'ds_micro_organismo']
         )
         .properties(width=600, height=400)
-    )
+    ).interactive()  # Adiciona interatividade
+
+    # Adiciona regras de seleção ao gráfico
+    selection = alt.selection_single()
+    chart = chart.add_selection(selection)
+
+    # Exibe o gráfico Altair no Streamlit
     st.altair_chart(chart, use_container_width=True)
+
+    # Adiciona um DataFrame oculto para exibir os dados quando um ponto/barra for selecionado
+    selected_data = df_data.loc[selection] if not selection.empty else pd.DataFrame()
+    st.write(selected_data)
+
+    # Use o ponto específico selecionado para realizar operações ou exibição
+    if not selected_data.empty:
+        ponto_selecionado = selected_data.iloc[0]
+        st.write(f"Ponto Selecionado: {ponto_selecionado}")
 else:
-    st.warning("Não há dados disponíveis para a unidade e tipo de data selecionados.")
+    st.warning(f"Não há dados disponíveis para a unidade {unidade_selecionada} e tipo de data selecionados.")
