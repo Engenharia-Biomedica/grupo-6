@@ -16,8 +16,8 @@ imgBloco1DAmarelo = Image.open("Bloco1D-Amarelo.png")
 imgBloco1DVermelho = Image.open("Bloco1D-Vermelho.png")
 imgBloco1DVerde = Image.open("Bloco1D-Verde.png")
 imgBloco2DAmarelo = Image.open("Bloco2D-Amarelo.png")
-imgBloco2DVermelho = Image.open("Bloco1D-Vermelho.png")
-imgBloco2DVerde = Image.open("Bloco1D-Verde.png")
+imgBloco2DVermelho = Image.open("Bloco2D-Vermelho.png")
+imgBloco2DVerde = Image.open("Bloco2D-Verde.png")
 imgBloco2AAmarelo = Image.open("Bloco2A-Amarelo.png")
 imgBloco2AVerde = Image.open("Bloco2A-Verde.png")
 imgBloco2AVermelho = Image.open("Bloco2A-Vermelho.png")
@@ -158,7 +158,7 @@ with col1:
     
 with col2:
     if num_registrosD == 0:
-        st.image(imgBloco1DAmarelo)
+        st.image(imgBloco1DVerde)
         st.image(imgBloco2DVerde)
     elif num_registrosD > 0 and num_registrosD <= 10:
         st.image(imgBloco1DAmarelo)
